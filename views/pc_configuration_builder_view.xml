@@ -1,0 +1,71 @@
+```xml
+<odoo>
+    <data>
+
+        <!-- PC Configuration Builder View Form -->
+        <record id="view_pc_configuration_form" model="ir.ui.view">
+            <field name="name">pc.configuration.form</field>
+            <field name="model">pc.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Custom PC Configuration">
+                    <sheet>
+                        <group>
+                            <field name="customer_id" widget="many2one" options="{'no_create': True}" />
+                            <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Components">
+                                <field name="component_ids" widget="many2many_tags" options="{'no_create': True}">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="brand"/>
+                                        <field name="model"/>
+                                        <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="compatibility_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="brand"/>
+                                            <field name="model"/>
+                                            <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="compatibility_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Visualization">
+                                <div class="o_pc_builder_visualization">
+                                    <field name="visualization" widget="binary_image" class="oe_avatar" options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
+                                </div>
+                            </page>
+                        </notebook>
+                        <footer>
+                            <button string="Save" type="object" name="save_configuration" class="btn-primary"/>
+                            <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- PC Configuration Builder Action -->
+        <record id="action_pc_configuration_form" model="ir.actions.act_window">
+            <field name="name">PC Configuration</field>
+            <field name="res_model">pc.configuration</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_pc_configuration_form"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Start by selecting the components for your custom PC.
+                </p>
+            </field>
+        </record>
+
+        <!-- PC Configuration Builder Menu Item -->
+        <menuitem id="menu_pc_configuration_form" name="PC Builder"
+                  parent="base.menu_sales" action="action_pc_configuration_form"/>
+
+    </data>
+</odoo>
+```

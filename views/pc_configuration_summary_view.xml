@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+
+        <!-- PC Configuration Summary View Form -->
+        <record id="pc_configuration_summary" model="ir.ui.view">
+            <field name="name">pc.configuration.summary.form</field>
+            <field name="model">pc.configuration</field>
+            <field name="arch" type="xml">
+                <form string="PC Configuration Summary">
+                    <sheet>
+                        <group>
+                            <field name="customer_id" widget="many2one" options="{'no_create': True}" />
+                            <field name="price" widget="monetary" />
+                        </group>
+                        <notebook>
+                            <page string="Selected Components">
+                                <field name="component_ids" widget="many2many_tags" options="{'no_create': True}">
+                                    <tree string="Components" editable="bottom">
+                                        <field name="image_small" widget="image" />
+                                        <field name="name" />
+                                        <field name="brand" />
+                                        <field name="model" />
+                                        <field name="price" sum="Total Price" widget="monetary" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Compatibility">
+                                <field name="compatibility_ids" widget="many2many_tags" options="{'no_create': True}">
+                                    <tree string="Compatibility Issues">
+                                        <field name="component_id" />
+                                        <field name="incompatible_with_id" />
+                                        <field name="note" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <footer>
+                            <button string="Confirm" type="object" name="action_confirm" class="btn-primary"/>
+                            <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

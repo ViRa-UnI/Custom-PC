@@ -1,0 +1,53 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Sample CPU Component Data -->
+        <record id="component_cpu_i7" model="component">
+            <field name="name">Intel Core i7</field>
+            <field name="category">CPU</field>
+            <field name="brand">Intel</field>
+            <field name="model">i7-9700K</field>
+            <field name="price">350.00</field>
+            <field name="image_path">component_images/cpu_i7.jpg</field>
+        </record>
+
+        <!-- Sample GPU Component Data -->
+        <record id="component_gpu_gtx" model="component">
+            <field name="name">NVIDIA GTX 1660</field>
+            <field name="category">GPU</field>
+            <field name="brand">NVIDIA</field>
+            <field name="model">GTX 1660</field>
+            <field name="price">220.00</field>
+            <field name="image_path">component_images/gpu_gtx.jpg</field>
+        </record>
+
+        <!-- Sample RAM Component Data -->
+        <record id="component_ram_corsair" model="component">
+            <field name="name">Corsair Vengeance LPX</field>
+            <field name="category">RAM</field>
+            <field name="brand">Corsair</field>
+            <field name="model">Vengeance LPX 16GB</field>
+            <field name="price">79.99</field>
+            <field name="image_path">component_images/ram_corsair.jpg</field>
+        </record>
+
+        <!-- Sample Storage Component Data -->
+        <record id="component_storage_ssd" model="component">
+            <field name="name">Samsung 970 EVO Plus SSD</field>
+            <field name="category">Storage</field>
+            <field name="brand">Samsung</field>
+            <field name="model">970 EVO Plus</field>
+            <field name="price">109.99</field>
+            <field name="image_path">component_images/storage_ssd.jpg</field>
+        </record>
+
+        <!-- Sample Motherboard Component Data -->
+        <record id="component_motherboard_asus" model="component">
+            <field name="name">ASUS ROG Strix</field>
+            <field name="category">Motherboard</field>
+            <field name="brand">ASUS</field>
+            <field name="model">ROG Strix Z390-E</field>
+            <field name="price">199.99</field>
+            <field name="image_path">component_images/motherboard_asus.jpg</field>
+        </record>
+    </data>
+</odoo>

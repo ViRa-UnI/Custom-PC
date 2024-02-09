@@ -1,0 +1,93 @@
+.pc-builder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.pc-builder-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.component-selector {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.component-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.component-item:hover {
+  background-color: #f7f7f7;
+}
+
+.component-item img {
+  max-width: 50px;
+  margin-right: 15px;
+}
+
+.component-item .component-details {
+  flex-grow: 1;
+}
+
+.component-item .component-price {
+  font-weight: bold;
+}
+
+#pc-visualization {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+}
+
+#price-total {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#wishlist-button,
+#share-button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#wishlist-button:hover,
+#share-button:hover {
+  background-color: #4cae4c;
+}
+
+#pc-configuration-form,
+#pc-configuration-summary {
+  width: 100%;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .pc-builder-container {
+    flex-direction: column;
+  }
+
+  .component-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .component-item img {
+    margin-bottom: 10px;
+  }
+}
